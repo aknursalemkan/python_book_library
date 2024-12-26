@@ -16,7 +16,7 @@ def check_positive_integer(user_input):
 
 # Function to change font colors for user-friendly design
 def colored_text(text, color):
-    colors = {  # Define ANSI escape codes for different colors
+    colors = {  # Dictionary. Define ANSI escape codes for different colors
         "red": "\033[91m",
         "green": "\033[92m",
         "yellow": "\033[93m",
@@ -25,7 +25,7 @@ def colored_text(text, color):
         "cyan": "\033[96m",
         "reset": "\033[0m"
     }
-    return f"{colors.get(color, colors['reset'])}{text}{colors['reset']}"  # Return text written text in the specified color code
+    return f"{colors.get(color, colors['reset'])}{text}{colors['reset']}"  # Return text written text in the specified color code, get is a method of dictionary
 
 # Function to clear the console
 def clear_screen():
@@ -59,7 +59,7 @@ def clear_database():
 
 # Function to add a book
 def add_book_to_library():
-    book_title = input("Enter book title: ").strip()  # Get book title and remove extra spaces
+    book_title = input("Enter book title: ").strip()  # Get book title and remove extra spaces at the beginning anf at the end
     book_author = input("Enter author name: ").strip()  # Get author name and remove extra spaces
     publication_year = check_positive_integer("Enter publication year: ")  # Get published year of book and ensure the year is a positive integer
     number_of_copies = check_positive_integer("Enter number of copies: ")  # Get copies of book and ensure the number of copies is positive
